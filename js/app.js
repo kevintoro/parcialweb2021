@@ -1,5 +1,5 @@
 function loadInfo() {
-  fetch('http://demo6497253.mockable.io/noticias')
+  fetch('https://demo6497253.mockable.io/noticias')
       .then(response => response.json())
       .then(data => loadNews(data));
 }
@@ -15,7 +15,7 @@ function loadNews(data) {
     const new_data = document.createElement("div");
     const title = document.createElement("h5");
     title.classList.add("text-primary");
-    title.textContent = data[i].titulo;
+    title.textContent = `${data[i].titulo} - ${data[i].categoria} - ${data[i].fecha}`
     new_data.appendChild(title);
 
     const hr = document.createElement("hr");
@@ -29,6 +29,7 @@ function loadNews(data) {
     see_more.href = "#";
     see_more.classList.add("link-success")
     if (i === 0) {
+      see_more.href = "./pages/noticia.html";
     }
     description.appendChild(see_more);
 
