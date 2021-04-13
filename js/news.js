@@ -13,7 +13,7 @@ function loadInfo() {
 }
 
 function loadNew(data) {
-  const img = document.getElementById('noticia_img');
+  const img = document.getElementById('main_img');
   img.src = data.img;
 
   const title = document.getElementById('main-title');
@@ -38,7 +38,7 @@ function deportesContent(data) {
     li.classList.add("list-group-item");
     li.textContent = data[i].titulo;
     deportes.appendChild(li);
-    if (i === 2){
+    if (i === 2) {
       break;
     }
   }
@@ -53,3 +53,5 @@ function tecnologiaContent(data) {
     tecnologia.appendChild(li);
   }
 }
+
+loadInfo();
